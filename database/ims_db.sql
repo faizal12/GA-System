@@ -40,7 +40,7 @@ CREATE TABLE `agreements` (
 
 insert  into `agreements`(`id`,`no_agreement`,`name`,`supplier`,`start`,`end`,`file`,`description`,`reminder`,`section`,`status`,`email`) values 
 (2,NULL,'Fortigate 60D','PT. KDDI','2020-07-29','2021-07-30','assets/images/agreement_file/60823d679079f.pdf','                                                                                                    License Forticlient                                                                                          ',30,'IT',1,0),
-(3,NULL,'Solidwork 2020','PT. Arisma Data Setia','2021-06-01','2021-05-30','assets/images/agreement_file/60823ce0cc1a9.pdf','License Solidwork Premium 2020',30,'IT',1,0);
+(3,NULL,'Solidwork 2020','PT. Arisma Data Setia','2021-06-01','2021-05-30','assets/images/agreement_file/60823ce0cc1a9.pdf','                                                            License Solidwork Premium 2020                                                      ',NULL,'IT',1,0);
 
 /*Table structure for table `attribute_value` */
 
@@ -142,7 +142,7 @@ CREATE TABLE `company` (
 /*Data for the table `company` */
 
 insert  into `company`(`id`,`company_name`,`service_charge_value`,`vat_charge_value`,`address`,`phone`,`country`,`message`,`currency`) values 
-(1,'Webrider','13','10','Madrid','758676851','sri lanka','hello everyone one','USD');
+(1,'PT. Tenma Indonesia','5','10','Madrid','758676851','Indonesia','hello everyone one','USD');
 
 /*Table structure for table `groups` */
 
@@ -153,14 +153,15 @@ CREATE TABLE `groups` (
   `group_name` varchar(255) NOT NULL,
   `permission` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `groups` */
 
 insert  into `groups`(`id`,`group_name`,`permission`) values 
-(1,'Administrator','a:41:{i:0;s:10:\"createUser\";i:1;s:10:\"updateUser\";i:2;s:8:\"viewUser\";i:3;s:10:\"deleteUser\";i:4;s:11:\"createGroup\";i:5;s:11:\"updateGroup\";i:6;s:9:\"viewGroup\";i:7;s:11:\"deleteGroup\";i:8;s:11:\"createBrand\";i:9;s:11:\"updateBrand\";i:10;s:9:\"viewBrand\";i:11;s:11:\"deleteBrand\";i:12;s:14:\"createCategory\";i:13;s:14:\"updateCategory\";i:14;s:12:\"viewCategory\";i:15;s:14:\"deleteCategory\";i:16;s:11:\"createStore\";i:17;s:11:\"updateStore\";i:18;s:9:\"viewStore\";i:19;s:11:\"deleteStore\";i:20;s:15:\"createAttribute\";i:21;s:15:\"updateAttribute\";i:22;s:13:\"viewAttribute\";i:23;s:15:\"deleteAttribute\";i:24;s:13:\"createProduct\";i:25;s:13:\"updateProduct\";i:26;s:11:\"viewProduct\";i:27;s:13:\"deleteProduct\";i:28;s:11:\"createOrder\";i:29;s:11:\"updateOrder\";i:30;s:9:\"viewOrder\";i:31;s:11:\"deleteOrder\";i:32;s:13:\"createRequest\";i:33;s:13:\"updateRequest\";i:34;s:11:\"viewRequest\";i:35;s:13:\"deleteRequest\";i:36;s:15:\"createAgreement\";i:37;s:15:\"updateAgreement\";i:38;s:13:\"viewAgreement\";i:39;s:15:\"deleteAgreement\";i:40;s:13:\"updateCompany\";}'),
+(1,'Administrator','a:49:{i:0;s:10:\"createUser\";i:1;s:10:\"updateUser\";i:2;s:8:\"viewUser\";i:3;s:10:\"deleteUser\";i:4;s:11:\"createGroup\";i:5;s:11:\"updateGroup\";i:6;s:9:\"viewGroup\";i:7;s:11:\"deleteGroup\";i:8;s:11:\"createBrand\";i:9;s:11:\"updateBrand\";i:10;s:9:\"viewBrand\";i:11;s:11:\"deleteBrand\";i:12;s:14:\"createCategory\";i:13;s:14:\"updateCategory\";i:14;s:12:\"viewCategory\";i:15;s:14:\"deleteCategory\";i:16;s:11:\"createStore\";i:17;s:11:\"updateStore\";i:18;s:9:\"viewStore\";i:19;s:11:\"deleteStore\";i:20;s:15:\"createAttribute\";i:21;s:15:\"updateAttribute\";i:22;s:13:\"viewAttribute\";i:23;s:15:\"deleteAttribute\";i:24;s:13:\"createProduct\";i:25;s:13:\"updateProduct\";i:26;s:11:\"viewProduct\";i:27;s:13:\"deleteProduct\";i:28;s:11:\"createOrder\";i:29;s:11:\"updateOrder\";i:30;s:9:\"viewOrder\";i:31;s:11:\"deleteOrder\";i:32;s:13:\"createRequest\";i:33;s:13:\"updateRequest\";i:34;s:11:\"viewRequest\";i:35;s:13:\"deleteRequest\";i:36;s:15:\"createAgreement\";i:37;s:15:\"updateAgreement\";i:38;s:13:\"viewAgreement\";i:39;s:15:\"deleteAgreement\";i:40;s:13:\"createSection\";i:41;s:13:\"updateSection\";i:42;s:11:\"viewSection\";i:43;s:13:\"deleteSection\";i:44;s:16:\"createRecipients\";i:45;s:16:\"updateRecipients\";i:46;s:14:\"viewRecipients\";i:47;s:16:\"deleteRecipients\";i:48;s:13:\"updateCompany\";}'),
 (5,'Manager','a:22:{i:0;s:11:\"createBrand\";i:1;s:11:\"updateBrand\";i:2;s:9:\"viewBrand\";i:3;s:14:\"createCategory\";i:4;s:14:\"updateCategory\";i:5;s:12:\"viewCategory\";i:6;s:11:\"createStore\";i:7;s:11:\"updateStore\";i:8;s:9:\"viewStore\";i:9;s:15:\"createAttribute\";i:10;s:15:\"updateAttribute\";i:11;s:13:\"viewAttribute\";i:12;s:13:\"createProduct\";i:13;s:13:\"updateProduct\";i:14;s:11:\"viewProduct\";i:15;s:11:\"createOrder\";i:16;s:11:\"updateOrder\";i:17;s:9:\"viewOrder\";i:18;s:13:\"createRequest\";i:19;s:13:\"updateRequest\";i:20;s:11:\"viewRequest\";i:21;s:13:\"updateCompany\";}'),
-(6,'Administrator','a:41:{i:0;s:10:\"createUser\";i:1;s:10:\"updateUser\";i:2;s:8:\"viewUser\";i:3;s:10:\"deleteUser\";i:4;s:11:\"createGroup\";i:5;s:11:\"updateGroup\";i:6;s:9:\"viewGroup\";i:7;s:11:\"deleteGroup\";i:8;s:11:\"createBrand\";i:9;s:11:\"updateBrand\";i:10;s:9:\"viewBrand\";i:11;s:11:\"deleteBrand\";i:12;s:14:\"createCategory\";i:13;s:14:\"updateCategory\";i:14;s:12:\"viewCategory\";i:15;s:14:\"deleteCategory\";i:16;s:11:\"createStore\";i:17;s:11:\"updateStore\";i:18;s:9:\"viewStore\";i:19;s:11:\"deleteStore\";i:20;s:15:\"createAttribute\";i:21;s:15:\"updateAttribute\";i:22;s:13:\"viewAttribute\";i:23;s:15:\"deleteAttribute\";i:24;s:13:\"createProduct\";i:25;s:13:\"updateProduct\";i:26;s:11:\"viewProduct\";i:27;s:13:\"deleteProduct\";i:28;s:11:\"createOrder\";i:29;s:11:\"updateOrder\";i:30;s:9:\"viewOrder\";i:31;s:11:\"deleteOrder\";i:32;s:13:\"createRequest\";i:33;s:13:\"updateRequest\";i:34;s:11:\"viewRequest\";i:35;s:13:\"deleteRequest\";i:36;s:15:\"createAgreement\";i:37;s:15:\"updateAgreement\";i:38;s:13:\"viewAgreement\";i:39;s:15:\"deleteAgreement\";i:40;s:13:\"updateCompany\";}');
+(6,'Administrator','a:49:{i:0;s:10:\"createUser\";i:1;s:10:\"updateUser\";i:2;s:8:\"viewUser\";i:3;s:10:\"deleteUser\";i:4;s:11:\"createGroup\";i:5;s:11:\"updateGroup\";i:6;s:9:\"viewGroup\";i:7;s:11:\"deleteGroup\";i:8;s:11:\"createBrand\";i:9;s:11:\"updateBrand\";i:10;s:9:\"viewBrand\";i:11;s:11:\"deleteBrand\";i:12;s:14:\"createCategory\";i:13;s:14:\"updateCategory\";i:14;s:12:\"viewCategory\";i:15;s:14:\"deleteCategory\";i:16;s:11:\"createStore\";i:17;s:11:\"updateStore\";i:18;s:9:\"viewStore\";i:19;s:11:\"deleteStore\";i:20;s:15:\"createAttribute\";i:21;s:15:\"updateAttribute\";i:22;s:13:\"viewAttribute\";i:23;s:15:\"deleteAttribute\";i:24;s:13:\"createProduct\";i:25;s:13:\"updateProduct\";i:26;s:11:\"viewProduct\";i:27;s:13:\"deleteProduct\";i:28;s:11:\"createOrder\";i:29;s:11:\"updateOrder\";i:30;s:9:\"viewOrder\";i:31;s:11:\"deleteOrder\";i:32;s:13:\"createRequest\";i:33;s:13:\"updateRequest\";i:34;s:11:\"viewRequest\";i:35;s:13:\"deleteRequest\";i:36;s:15:\"createAgreement\";i:37;s:15:\"updateAgreement\";i:38;s:13:\"viewAgreement\";i:39;s:15:\"deleteAgreement\";i:40;s:13:\"createSection\";i:41;s:13:\"updateSection\";i:42;s:11:\"viewSection\";i:43;s:13:\"deleteSection\";i:44;s:16:\"createRecipients\";i:45;s:16:\"updateRecipients\";i:46;s:14:\"viewRecipients\";i:47;s:16:\"deleteRecipients\";i:48;s:13:\"updateCompany\";}'),
+(7,'GA Member','a:32:{i:0;s:11:\"createBrand\";i:1;s:11:\"updateBrand\";i:2;s:9:\"viewBrand\";i:3;s:11:\"deleteBrand\";i:4;s:14:\"createCategory\";i:5;s:14:\"updateCategory\";i:6;s:12:\"viewCategory\";i:7;s:14:\"deleteCategory\";i:8;s:11:\"createStore\";i:9;s:11:\"updateStore\";i:10;s:9:\"viewStore\";i:11;s:11:\"deleteStore\";i:12;s:15:\"createAttribute\";i:13;s:15:\"updateAttribute\";i:14;s:13:\"viewAttribute\";i:15;s:15:\"deleteAttribute\";i:16;s:13:\"createProduct\";i:17;s:13:\"updateProduct\";i:18;s:11:\"viewProduct\";i:19;s:13:\"deleteProduct\";i:20;s:11:\"createOrder\";i:21;s:11:\"updateOrder\";i:22;s:9:\"viewOrder\";i:23;s:11:\"deleteOrder\";i:24;s:13:\"createRequest\";i:25;s:13:\"updateRequest\";i:26;s:11:\"viewRequest\";i:27;s:13:\"deleteRequest\";i:28;s:15:\"createAgreement\";i:29;s:15:\"updateAgreement\";i:30;s:13:\"viewAgreement\";i:31;s:15:\"deleteAgreement\";}');
 
 /*Table structure for table `options` */
 
@@ -227,17 +228,20 @@ CREATE TABLE `orders` (
   `vat_charge` varchar(255) NOT NULL,
   `net_amount` varchar(255) NOT NULL,
   `discount` varchar(255) NOT NULL,
+  `remark` text,
   `paid_status` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 /*Data for the table `orders` */
 
-insert  into `orders`(`id`,`bill_no`,`customer_name`,`customer_address`,`customer_phone`,`date_time`,`gross_amount`,`service_charge_rate`,`service_charge`,`vat_charge_rate`,`vat_charge`,`net_amount`,`discount`,`paid_status`,`user_id`) values 
-(11,'OR-08CA','','','','1618907358','','','','','','','',2,1),
-(12,'OR-A13D','','','','1618907453','','','','','','','',2,1),
-(13,'OR-3004','','','','1618909318','','','','','','','',2,1);
+insert  into `orders`(`id`,`bill_no`,`customer_name`,`customer_address`,`customer_phone`,`date_time`,`gross_amount`,`service_charge_rate`,`service_charge`,`vat_charge_rate`,`vat_charge`,`net_amount`,`discount`,`remark`,`paid_status`,`user_id`) values 
+(11,'OR-08CA','','','','1618907358','','','','','','','','',1,1),
+(12,'OR-A13D','','','','1618907453','','','','','','','','Datang baru',1,1),
+(13,'OR-3004','','','','1618909318','','','','','','','',NULL,2,1),
+(15,'OR-678D','','','','1619572185','','','','','','','','Return dari TMIS',2,1),
+(16,'OR-FEF4','','','','1619577890','','','','','','','','',1,1);
 
 /*Table structure for table `orders_item` */
 
@@ -251,16 +255,20 @@ CREATE TABLE `orders_item` (
   `rate` varchar(255) NOT NULL,
   `amount` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
 
 /*Data for the table `orders_item` */
 
 insert  into `orders_item`(`id`,`order_id`,`product_id`,`qty`,`rate`,`amount`) values 
-(81,11,16,3,'',''),
-(82,11,14,3,'',''),
-(83,11,15,3,'',''),
-(84,12,17,2,'',''),
-(85,13,13,2,'','');
+(85,13,13,2,'',''),
+(88,15,13,1,'',''),
+(109,12,17,2,'',''),
+(110,11,16,3,'',''),
+(111,11,14,3,'',''),
+(112,11,15,3,'',''),
+(116,16,13,1,'',''),
+(117,16,14,2,'',''),
+(118,16,15,2,'','');
 
 /*Table structure for table `products` */
 
@@ -301,14 +309,16 @@ CREATE TABLE `recipients` (
   `name` varchar(100) DEFAULT NULL,
   `section` varchar(50) DEFAULT NULL,
   `email` text,
-  `status` int(11) DEFAULT '0',
+  `active` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `recipients` */
 
-insert  into `recipients`(`id`,`name`,`section`,`email`,`status`) values 
-(1,'Faizal ','IT','it_tmi@tenmacorp.co.jp',0);
+insert  into `recipients`(`id`,`name`,`section`,`email`,`active`) values 
+(1,'Faizal ','IT','it_tmi@tenmacorp.co.jp',1),
+(2,'Gita','GA','hrd_dept@tenmacorp.co.jp',1),
+(3,'Yayat','IT','it.team@tenmacorp.co.jp',1);
 
 /*Table structure for table `requests` */
 
@@ -322,12 +332,14 @@ CREATE TABLE `requests` (
   `remark` text,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `requests` */
 
 insert  into `requests`(`id`,`request_no`,`date_time`,`paid_status`,`remark`,`user_id`) values 
-(5,'REQ-6E58','1619399044',1,'For Printer Office Production',1);
+(5,'REQ-6E58','1619399044',1,'For Printer Office Production',1),
+(6,'REQ-D286','1619431011',1,'TMIS request urgent',1),
+(7,'REQ-8B79','1619578084',2,'',1);
 
 /*Table structure for table `requests_item` */
 
@@ -341,12 +353,16 @@ CREATE TABLE `requests_item` (
   `rate` varchar(255) NOT NULL,
   `amount` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 /*Data for the table `requests_item` */
 
 insert  into `requests_item`(`id`,`requests_id`,`product_id`,`qty`,`rate`,`amount`) values 
-(15,5,17,1,'','');
+(15,5,17,1,'',''),
+(18,6,13,1,'',''),
+(19,7,15,2,'',''),
+(20,7,14,2,'',''),
+(21,7,13,1,'','');
 
 /*Table structure for table `schedule` */
 
@@ -367,6 +383,24 @@ CREATE TABLE `schedule` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `schedule` */
+
+/*Table structure for table `section` */
+
+DROP TABLE IF EXISTS `section`;
+
+CREATE TABLE `section` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `section_cd` varchar(15) DEFAULT NULL,
+  `section_name` varchar(50) DEFAULT NULL,
+  `active` int(11) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+/*Data for the table `section` */
+
+insert  into `section`(`id`,`section_cd`,`section_name`,`active`) values 
+(1,'IT','Information Technology',1),
+(4,'GA','GA',1);
 
 /*Table structure for table `stores` */
 
@@ -395,7 +429,7 @@ CREATE TABLE `user_group` (
   `user_id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user_group` */
 
@@ -407,7 +441,8 @@ insert  into `user_group`(`id`,`user_id`,`group_id`) values
 (10,9,5),
 (11,10,5),
 (12,11,5),
-(13,12,5);
+(13,12,5),
+(14,13,7);
 
 /*Table structure for table `users` */
 
@@ -423,14 +458,13 @@ CREATE TABLE `users` (
   `phone` varchar(255) NOT NULL,
   `gender` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`username`,`password`,`email`,`firstname`,`lastname`,`phone`,`gender`) values 
 (1,'admin','$2y$10$yfi5nUQGXUZtMdl27dWAyOd/jMOmATBpiUvJDmUu9hJ5Ro6BE5wsK','admin@admin.com','john','doe','65646546',1),
-(11,'shafraz','$2y$10$LK91ERpEJxortR86lkDjwu7MClazgIrvDqehqOnq5ZKm30elKAkUa','shafraz@gmail.com','mohamed','nizam','0778650669',1),
-(12,'jsmith','$2y$10$WLS.lZeiEfyXYfR0l/wkXeRRuqazsgIAMC9//L44J4KkZGbbqcKYC','jsmith@sample.com','John','Smith','2345678',1);
+(13,'gita','$2y$10$y06TDGyhk4JO1OCP4hrZUuEEwMn4pxwIMuSJF/sdF7j7wTIfesXdy','gita@tenma.id','Gita','Sulistyani','',2);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
