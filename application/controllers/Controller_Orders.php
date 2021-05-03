@@ -179,7 +179,7 @@ class Controller_Orders extends Admin_Controller
         	
         	if($update == true) {
         		$this->session->set_flashdata('success', 'Successfully updated');
-        		// redirect('Controller_Orders', 'refresh');
+        		redirect('Controller_Orders', 'refresh');
         	}
         	else {
         		$this->session->set_flashdata('errors', 'Error occurred!!');
