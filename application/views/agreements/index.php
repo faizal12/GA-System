@@ -50,7 +50,7 @@
               <thead>
               <tr>
                 <th>File</th>
-                
+                <th>No Agreement</th>
                 <th>Agreement Name</th>
                 <th>Supplier</th>
                 <th>Start</th>
@@ -122,7 +122,8 @@ $(document).ready(function() {
             'copy', 'csv', 'excel', 'print'
         ], 
     'ajax': base_url + 'Controller_Agreements/fetchAgreementData',
-    'order': []
+    'order': [],
+    'autoWidth':false,
   });
 
 });

@@ -56,8 +56,11 @@ class Controller_Agreements extends Admin_Controller
 			
 
 			// $img = '<img src="'.base_url($value['image']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
-            $file = '<a href="'.base_url($value['file']).'" target="_blank" >'.$value['name'].'</a>';
-
+            if ($value['file'] == "<p>You did not select a file to upload.</p>"){
+                $file = '<a href="'.base_url($value['file']).'" target="_blank" >File not found</a>';
+            }else{
+                $file = '<a href="'.base_url($value['file']).'" target="_blank" >'.$value['name'].'</a>';
+            }
             $status = ($value['status'] == 1) ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-warning">Inactive</span>';
 
             // $qty_status = '';
@@ -70,6 +73,7 @@ class Controller_Agreements extends Admin_Controller
 
 			$result['data'][$key] = array(
 				$file,
+				$value['no_agreement'],
 				$value['name'],
 				$value['supplier'],
 				$value['start'],
@@ -104,9 +108,11 @@ class Controller_Agreements extends Admin_Controller
         if ($this->form_validation->run() == TRUE) {
             // true case
         	$upload_file = $this->upload_file();
-
+            $no_agreement = 'AG-'.strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 6));
         	$data = array(
+        		'no_agreement'=> $no_agreement,
         		'name'        => $this->input->post('agreement_name'),
+        		'date_create' => date('Y-m-d H:i:s'),
         		'supplier'    => $this->input->post('supplier'),
         		'file'        => $upload_file,
         		'description' => $this->input->post('description'),

@@ -46,7 +46,8 @@ class Controller_Requests extends Admin_Controller
 			$date = date('d-m-Y', $value['date_time']);
 			$time = date('h:i a', $value['date_time']);
 
-			$date_time = $date . ' ' . $time;
+			// $date_time = $date . ' ' . $time;
+			$date_time = date('d-m-Y H:i:s',$value['date_time']);
 
 			// button
 			$buttons = '';
