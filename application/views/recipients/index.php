@@ -99,7 +99,12 @@
             </div>
             <div class="form-group">
               <label for="brand_name">Recipients Section</label>
-              <input type="text" class="form-control" id="section" name="section" placeholder="Enter warehouse name" autocomplete="off">
+              <select class="form-control" id="section" name="section">
+                <option value=""></option>
+                <?php foreach($section as $rs => $key): ?>
+                  <option value="<?=$key['section_cd']?>"><?=$key['section_cd']?></option>
+                <?php endforeach;?>
+              </select>
             </div>
             <div class="form-group">
               <label for="active">Status</label>
@@ -148,7 +153,14 @@
             </div>
             <div class="form-group">
               <label for="brand_name">Recipients Section</label>
-              <input type="text" class="form-control" id="edit_section" name="edit_section" placeholder="Enter warehouse name" autocomplete="off">
+              <select class="form-control" id="edit_section" name="edit_section">
+                <option value=""></option>
+                <?php foreach($section as $rs => $key): ?>
+                  <option value="<?=$key['section_cd']?>"><?=$key['section_cd']?></option>
+                <?php endforeach;?>
+              </select>
+              <!-- <input type="text" class="form-control" id="edit_section" name="edit_section" placeholder-->
+              
             </div>
             <div class="form-group">
               <label for="edit_active">Status</label>

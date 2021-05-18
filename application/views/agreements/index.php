@@ -38,7 +38,7 @@
         <?php endif; ?>
 
         <?php if(in_array('createAgreement', $user_permission)): ?>
-          <a href="<?php echo base_url('Controller_Agreements/create') ?>" class="btn btn-primary">Add Agreement</a>
+          <a href="<?php echo base_url('Controller_Agreements/create') ?>" class="btn btn-primary btn-sm">Add Agreement</a>
           <br /> <br />
         <?php endif; ?>
 
@@ -57,6 +57,7 @@
                 <th>End</th>
                 <th>Section</th>
                 <th>Status</th>
+                <th>Email</th>
                 <?php if(in_array('updateAgreement', $user_permission) || in_array('deleteAgreement', $user_permission)): ?>
                   <th>Action</th>
                 <?php endif; ?>
