@@ -23,7 +23,7 @@
   <!-- Main content -->
   <section class="content">
     <!-- Small boxes (Stat box) -->
-    <?php if ($is_admin == true) : ?>
+    <?php //if ($is_admin == true) : ?>
 
       <?php if ($total_low) : ?>
         <div class="alert alert-warning alert-dismissible" role="alert">
@@ -36,22 +36,22 @@
         </div>
       <?php endif; ?>
       <div class="row">
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-2 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3><?php echo $total_brands ?></h3>
+              <h3><?php echo $total_products ?></h3>
 
-              <p>Total Items</p>
+              <p>Total Products</p>
             </div>
             <div class="icon">
               <i class="fa fa-cube"></i>
             </div>
-            <a href="<?php echo base_url('Controller_Items/') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('Controller_Products/') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-2 col-6">
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
@@ -66,7 +66,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-2 col-6">
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
@@ -90,9 +90,24 @@
               <p>Total Agreements</p>
             </div>
             <div class="icon">
-              <i class="ion ion-android-home"></i>
+              <i class="ion ion-document-text"></i>
             </div>
             <a href="<?php echo base_url('Controller_Agreements/') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <h3><?=$total_reminder?></h3>
+
+              <p>Total Reminder</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-paper"></i>
+            </div>
+            <a href="<?php echo base_url('Controller_Reminder/') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -100,7 +115,7 @@
 
       
       <!-- /.row -->
-    <?php endif; ?>
+    <?php //endif; ?>
     <div class="card card-primary">
       <div class="card-header">
         <h5 class="card-title">Current Stock</h5>
@@ -138,6 +153,8 @@
       </div>
       <!-- /.card-footer -->
     </div>
+
+    
 
   </section>
 

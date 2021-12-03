@@ -11,6 +11,9 @@ class MY_Controller extends CI_Controller
 class Admin_Controller extends MY_Controller 
 {
 	var $permission = array();
+	var $groupWH = array();
+	var $levelUser = "";
+	var $groupDept = array();
 
 	public function __construct() 
 	{
@@ -28,6 +31,48 @@ class Admin_Controller extends MY_Controller
 			
 			$this->data['user_permission'] = unserialize($group_data['permission']);
 			$this->permission = unserialize($group_data['permission']);
+			// $this->groupuser = $group_data['group_name'];	
+			if ($group_data['group_name'] != "Administrator"){
+				//Level
+				$this->levelUser = "user";
+				//Warehouse
+				$this->db->where('dept',$this->session->userdata('dept'));
+				$query=$this->db->get('stores');
+				// print_r($this->db->last_query());
+				
+				if($query->num_rows() >0){
+					foreach($query->result() as $row){
+						array_push($this->groupWH, $row->id);
+					}
+				}else{
+					array_push($this->groupWH,'1');
+				}
+				
+				//Section
+				$this->db->where('section_cd',$this->session->userdata('dept'));
+				$query=$this->db->get('section');
+				foreach($query->result() as $row){
+					array_push($this->groupDept, $row->section_cd);					
+				}
+				
+			}else{
+				//Level
+				$this->levelUser = "administrator";
+				//Warehouse
+				$query=$this->db->get('stores');
+				foreach($query->result() as $row){
+					array_push($this->groupWH, $row->id);
+				}
+
+				//Section
+				$query=$this->db->get('section');
+				foreach($query->result() as $row){
+					array_push($this->groupDept, $row->section_cd);					
+				}
+
+				
+			}
+			// print_r($this->groupDept);
 		}
 	}
 
