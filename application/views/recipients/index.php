@@ -194,7 +194,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
 
-        <form role="form" action="<?php echo base_url('Controller_Warehouse/remove') ?>" method="post" id="removeForm">
+        <form role="form" action="<?php echo base_url('Controller_Recipients/remove') ?>" method="post" id="removeForm">
           <div class="modal-body">
             <p>Do you really want to remove?</p>
           </div>

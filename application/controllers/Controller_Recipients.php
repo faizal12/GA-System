@@ -192,7 +192,7 @@ class Controller_Recipients extends Admin_Controller
 			redirect('dashboard', 'refresh');
 		}
 		
-		$Recipients_id = $this->input->post('Recipients_id');
+		$Recipients_id = $this->input->post('recipients_id');
 
 		$response = array();
 		if($Recipients_id) {

@@ -46,12 +46,12 @@ class Model_Email extends CI_Model
         $message .= '<br>';
 		$message .= '<table  style="border: 1px solid black">
 					<tr>
-						<td style="border: 1px solid black;text-align:center">No</td>
-						<td style="border: 1px solid black;text-align:center">Name</td>
-						<td style="border: 1px solid black;text-align:center">Supplier</td>
-						<td style="border: 1px solid black;text-align:center">Start</td>
-						<td style="border: 1px solid black;text-align:center">End</td>
-						<td style="border: 1px solid black;text-align:center">Description</td>
+						<td style="text-align:center">No</td>
+						<td style="text-align:center">Name</td>
+						<td style="text-align:center">Supplier</td>
+						<td style="text-align:center">Start</td>
+						<td style="text-align:center">End</td>
+						<td style="text-align:center">Description</td>
 					</tr>';
 		
         $no=1;
@@ -68,12 +68,12 @@ class Model_Email extends CI_Model
             $desc     = $dataEmail['desc'][$b];
             $b++;
             $message .='<tr>
-                            <td style="border: thin solid black">'.$no++.'</td>
-                            <td style="border: thin solid black">'.$nama.'</td>
-                            <td style="border: thin solid black">'.$supplier.'</td>
-                            <td style="border: thin solid black">'.date('d-M-Y',strtotime($start)) . '</td>
-                            <td style="border: thin solid black">'.date('d-M-Y',strtotime($end)) . '</td>
-                            <td style="border: thin solid black">'.$desc.'</td>
+                            <td style="">'.$no++.'</td>
+                            <td style="">'.$nama.'</td>
+                            <td style="">'.$supplier.'</td>
+                            <td style="">'.date('d-M-Y',strtotime($start)) . '</td>
+                            <td style="">'.date('d-M-Y',strtotime($end)) . '</td>
+                            <td style="">'.$desc.'</td>
                         </tr>';
                         $this->db->where('name',$nama);
                         $this->db->where('supplier',$supplier);
@@ -95,14 +95,13 @@ class Model_Email extends CI_Model
         $this->email->subject($subject);
         $this->email->message($message);
 
-        if (config_notification_email == 1) {
-            if ($this->email->send()) {
-               
-                echo 'Your Email has successfully been sent.';
-            } else {
-                show_error($this->email->print_debugger());
-            }
-        }
+        // if (config_notification_email == 1) {
+        //     if ($this->email->send()) {
+        //         echo 'Your Email has successfully been sent.';
+        //     } else {
+        //         show_error($this->email->print_debugger());
+        //     }
+        // }
         
     }
     function sendEmailReminder($dataEmail) {
@@ -201,20 +200,20 @@ class Model_Email extends CI_Model
             $mail->Body .= '<br>';
             $mail->Body .= email_footer;
             // echo $file_to_attach;
-            if(!$mail->send()){
-	            echo 'Message could not be sent.';
-	            // echo 'Mailer Error: ' . $mail->ErrorInfo;
-                // echo 'Your Email has successfully been sent.';
+            // if(!$mail->send()){
+	        //     echo 'Message could not be sent.';
+	        //     // echo 'Mailer Error: ' . $mail->ErrorInfo;
+            //     // echo 'Your Email has successfully been sent.';
                     
-	        }else{
-	            echo 'Message has been sent';
-                $this->db->where('REMINDER_ID',$id);
-                    $this->db->where('REMINDER_DT',date('Y-m-d',strtotime($REMINDER_DT)));
-                    $this->db->update('frequent_dt',array('STATUS' => 1));
+	        // }else{
+	        //     echo 'Message has been sent';
+            //     $this->db->where('REMINDER_ID',$id);
+            //         $this->db->where('REMINDER_DT',date('Y-m-d',strtotime($REMINDER_DT)));
+            //         $this->db->update('frequent_dt',array('STATUS' => 1));
                         
-                    $this->db->query("UPDATE reminder SET status_email=status_email+1 where id='".$id."'");
-                    echo $this->db->last_query();
-	        }
+            //         $this->db->query("UPDATE reminder SET status_email=status_email+1 where id='".$id."'");
+            //         echo $this->db->last_query();
+	        // }
 
             $b++;
             

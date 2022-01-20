@@ -54,9 +54,11 @@ class Controller_Products extends Admin_Controller
     			$buttons .= ' <button type="button" class="btn btn-danger btn-sm" onclick="removeFunc('.$value['id'].')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
             }
 			
-
-			$img = '<img src="'.base_url($value['image']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
-
+            if($value['image']=="<p>You did not select a file to upload.</p>" || $value['image']==""){
+                $img = '<img src="'.base_url("assets/images/product_image/not-found.jpg").'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
+            }else{
+                $img = '<img src="'.base_url($value['image']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
+            }
             $availability = ($value['availability'] == 1) ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-warning">Inactive</span>';
 
             $qty_status = '';
@@ -102,9 +104,13 @@ class Controller_Products extends Admin_Controller
     			$buttons .= ' <button type="button" class="btn btn-danger btn-sm" onclick="removeFunc('.$value['id'].')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
             }
 			
+            
 
-			$img = '<img src="'.base_url($value['image']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
-
+			if($value['image']=="<p>You did not select a file to upload.</p>" || $value['image']==""){
+                $img = '<img src="'.base_url("assets/images/product_image/not-found.jpg").'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
+            }else{
+                $img = '<img src="'.base_url($value['image']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
+            }
             $availability = ($value['availability'] == 1) ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-warning">Inactive</span>';
 
             $qty_status = '';

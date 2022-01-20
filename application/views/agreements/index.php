@@ -118,13 +118,25 @@ $(document).ready(function() {
 
   // initialize the datatable 
   manageTable = $('#manageTable').DataTable({
-    dom: 'Bfrtip',
-        buttons: [
+    "paging": true,
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+    dom: "B<'ui grid'" +
+				"<'row'" +
+				"<'col-sm-12 col-md-6'l>" +
+				"<'col-sm-12 col-md-6'f>" +
+				">" +
+				"tr" +
+				"<'row'" +
+				"<'col-sm-12 col-md-6'i>" +
+				"<'col-sm-12 col-md-6'p>" +
+				">" +
+				">",
+      buttons: [
             'copy', 'csv', 'excel', 'print'
         ], 
     'ajax': base_url + 'Controller_Agreements/fetchAgreementData',
     'order': [],
-    'autoWidth':false,
+    // 'autoWidth':false,
   });
 
 });

@@ -48,11 +48,11 @@ class Controller_Reminder extends Admin_Controller
             // $store_data = $this->model_stores->getStoresData($value['store_id']);
 			// button
             $buttons = '';
-            if(in_array('updateAgreement', $this->permission)) {
+            if(in_array('updateReminder', $this->permission)) {
     			$buttons .= '<a href="'.base_url('Controller_Reminder/update/'.$value['id']).'" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>';
             }
 
-            if(in_array('deleteAgreement', $this->permission)) { 
+            if(in_array('deleteReminder', $this->permission)) { 
     			$buttons .= ' <button type="button" class="btn btn-danger btn-sm" onclick="removeFunc('.$value['id'].')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
             }
 			
@@ -207,7 +207,7 @@ class Controller_Reminder extends Admin_Controller
     */
 	public function update($reminder_id)
 	{      
-        if(!in_array('updateProduct', $this->permission)) {
+        if(!in_array('updateReminder', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
 
@@ -289,7 +289,7 @@ class Controller_Reminder extends Admin_Controller
     */
 	public function remove()
 	{
-        if(!in_array('deleteProduct', $this->permission)) {
+        if(!in_array('deleteReminder', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
         

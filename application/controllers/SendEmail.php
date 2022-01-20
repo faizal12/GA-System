@@ -26,10 +26,12 @@ class sendEmail extends Admin_Controller
         foreach ($sql->result() as $row) {
 
             $dataEmail = array();
-            $this->db->where('section', $row->section_cd);
-            $this->db->where('email', 0);
-            $query = $this->db->get('agreements');
+            // $this->db->where('section', $row->section_cd);
+            // $this->db->where('email', 0);
+            // $query = $this->db->get('agreements');
             // print_r($this->db->last_query());
+            $this->db->where('section',$row->section_cd);
+            $query=$this->db->get('agreement_aktif');
 
             foreach ($query->result() as $rs) {
                 $nama     = $rs->name;
@@ -49,7 +51,7 @@ class sendEmail extends Admin_Controller
                 // print_r($diff."\n");
                 
 
-                if ($diff <= $reminder) {
+                // if ($diff <= $reminder) {
                    
                 // echo "faizal";
                     
@@ -59,7 +61,7 @@ class sendEmail extends Admin_Controller
                     $dataEmail['end'][]      = $end;
                     $dataEmail['desc'][]     = $desc;
                     $dataEmail['section'][]  = $sec;
-                }
+                // }
             }
 
             // echo $rs->id;
@@ -70,7 +72,7 @@ class sendEmail extends Admin_Controller
                 $c=$c+0;
             } else {
                 $c=$c+1;
-                echo "Gagal Email";
+                // echo "Gagal Email";
             }
         }
 
@@ -112,6 +114,6 @@ class sendEmail extends Admin_Controller
         //Set STATUS REMINDER WHEN CLOSE
         $this->db->query("CALL SP_UPD_EMAIL");
 
-        
+        echo "<script>window.close();</script>";
     }
 }
