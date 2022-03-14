@@ -95,13 +95,13 @@ class Model_Email extends CI_Model
         $this->email->subject($subject);
         $this->email->message($message);
 
-        // if (config_notification_email == 1) {
-        //     if ($this->email->send()) {
-        //         echo 'Your Email has successfully been sent.';
-        //     } else {
-        //         show_error($this->email->print_debugger());
-        //     }
-        // }
+        if (config_notification_email == 1) {
+            if ($this->email->send()) {
+                echo 'Your Email has successfully been sent.';
+            } else {
+                show_error($this->email->print_debugger());
+            }
+        }
         
     }
     function sendEmailReminder($dataEmail) {
@@ -200,20 +200,20 @@ class Model_Email extends CI_Model
             $mail->Body .= '<br>';
             $mail->Body .= email_footer;
             // echo $file_to_attach;
-            // if(!$mail->send()){
-	        //     echo 'Message could not be sent.';
-	        //     // echo 'Mailer Error: ' . $mail->ErrorInfo;
-            //     // echo 'Your Email has successfully been sent.';
+            if(!$mail->send()){
+	            echo 'Message could not be sent.';
+	            // echo 'Mailer Error: ' . $mail->ErrorInfo;
+                // echo 'Your Email has successfully been sent.';
                     
-	        // }else{
-	        //     echo 'Message has been sent';
-            //     $this->db->where('REMINDER_ID',$id);
-            //         $this->db->where('REMINDER_DT',date('Y-m-d',strtotime($REMINDER_DT)));
-            //         $this->db->update('frequent_dt',array('STATUS' => 1));
+	        }else{
+	            echo 'Message has been sent';
+                $this->db->where('REMINDER_ID',$id);
+                    $this->db->where('REMINDER_DT',date('Y-m-d',strtotime($REMINDER_DT)));
+                    $this->db->update('frequent_dt',array('STATUS' => 1));
                         
-            //         $this->db->query("UPDATE reminder SET status_email=status_email+1 where id='".$id."'");
-            //         echo $this->db->last_query();
-	        // }
+                    $this->db->query("UPDATE reminder SET status_email=status_email+1 where id='".$id."'");
+                    echo $this->db->last_query();
+	        }
 
             $b++;
             

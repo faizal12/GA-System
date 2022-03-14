@@ -67,8 +67,8 @@ class sendEmail extends Admin_Controller
             // echo $rs->id;
             if (array_key_exists("nama", $dataEmail)) {
                 $this->model_email->sendEmailAlert($dataEmail,$row->section_cd);
-                // $this->db->where('id',$rs->id);
-                // $this->db->update('agreements',array('email' => 1));
+                $this->db->where('id',$rs->id);
+                $this->db->update('agreements',array('email' => 1));
                 $c=$c+0;
             } else {
                 $c=$c+1;
